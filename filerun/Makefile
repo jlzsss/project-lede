@@ -5,7 +5,7 @@ PKG_VERSION:=2021_06_27
 PKG_RELEASE:=PHP_71-74
 
 PKG_FILE:=$(PKG_NAME)_$(PKG_VERSION)_$(PKG_RELEASE).zip
-PKG_URL:=http://www.filerun.com/download-latest
+PKG_URL:=https://f.afian.se/wl/?id=iwmi3ydsxr2Ocq1Lo6atTsIfQA70gDov&fmode=download
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)
 PKG_HASH:=skip
 PKG_MAINTAINER:=GaryPang <https://github.com/garypang13/openwrt-filerun>
