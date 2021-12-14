@@ -1,11 +1,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=FileRun
-PKG_VERSION:=2021_12_07
-PKG_RELEASE:=PHP72-74
+PKG_VERSION:=2021_06_27
+PKG_RELEASE:=PHP_71-74
 
 PKG_FILE:=$(PKG_NAME)_$(PKG_VERSION)_$(PKG_RELEASE).zip
-PKG_URL:=http://www.filerun.com/download-latest
+PKG_URL:=https://github.com/jlzsss/FileRun.git
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)
 PKG_HASH:=skip
 PKG_MAINTAINER:=GaryPang <https://github.com/garypang13/openwrt-filerun>
@@ -32,11 +32,11 @@ endef
 
 define Build/Prepare
 	if [ ! -f $(DL_DIR)/$(PKG_FILE) ] ; then \
-		curl -f --connect-timeout 20 --retry 5 --location --insecure $(PKG_URL) -o $(DL_DIR)/$(PKG_FILE); \
+		git clone $(PKG_URL) $(DL_DIR)/$(PKG_FILE); \
 	fi
 	rm -r $(PKG_BUILD_DIR)
 	mkdir -p $(PKG_BUILD_DIR)
-	unzip $(DL_DIR)/$(PKG_FILE) -d $(PKG_BUILD_DIR)
+	# unzip $(DL_DIR)/$(PKG_FILE) -d $(PKG_BUILD_DIR)
 endef
 
 define Build/Compile
