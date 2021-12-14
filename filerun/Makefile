@@ -4,7 +4,7 @@ PKG_NAME:=FileRun
 PKG_VERSION:=2021_6_27
 PKG_RELEASE:=1
 
-PKG_FILE:=$(PKG_NAME)-$(PKG_VERSION).zip
+PKG_FILE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_URL:=https://github.com/jlzsss/FileRun.git
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)
 PKG_HASH:=skip
@@ -32,11 +32,11 @@ endef
 
 define Build/Prepare
 	if [ ! -f $(DL_DIR)/$(PKG_FILE) ] ; then \
-		curl -L https://codeload.github.com/jlzsss/FileRun/zip/v$(PKG_VERSION) -o $(DL_DIR); \
+		curl -L https://codeload.github.com/jlzsss/FileRun/tar.gz/v$(PKG_VERSION) -o $(DL_DIR)/$(PKG_FILE); \
 	fi
 	rm -r $(PKG_BUILD_DIR)
 	mkdir -p $(PKG_BUILD_DIR)
-	unzip $(DL_DIR)/$(PKG_FILE) -d $(PKG_BUILD_DIR)
+	tar -zxvf $(DL_DIR)/$(PKG_FILE) -C $(PKG_BUILD_DIR)
 endef
 
 define Build/Compile
