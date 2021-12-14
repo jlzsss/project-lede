@@ -1,8 +1,8 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=FileRun
-PKG_VERSION:=2021_06_27
-PKG_RELEASE:=PHP_71-74
+PKG_VERSION:=2021_12_07
+PKG_RELEASE:=PHP72-74
 
 PKG_FILE:=$(PKG_NAME)_$(PKG_VERSION)_$(PKG_RELEASE).zip
 PKG_URL:=http://www.filerun.com/download-latest
