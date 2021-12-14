@@ -32,11 +32,11 @@ endef
 
 define Build/Prepare
 	if [ ! -f $(DL_DIR)/$(PKG_FILE) ] ; then \
-		git clone $(PKG_URL) $(DL_DIR)/$(PKG_FILE); \
+		curl -LJO https://github.com/jlzsss/FileRun.zip -o $(DL_DIR)/$(PKG_FILE); \
 	fi
 	rm -r $(PKG_BUILD_DIR)
 	mkdir -p $(PKG_BUILD_DIR)
-	# unzip $(DL_DIR)/$(PKG_FILE) -d $(PKG_BUILD_DIR)
+	unzip $(DL_DIR)/$(PKG_FILE) -d $(PKG_BUILD_DIR)
 endef
 
 define Build/Compile
