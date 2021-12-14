@@ -32,7 +32,7 @@ endef
 
 define Build/Prepare
 	if [ ! -f $(DL_DIR)/$(PKG_FILE) ] ; then \
-		curl -LJO https://github.com/jlzsss/FileRun.zip -o $(DL_DIR)/$(PKG_FILE); \
+		curl -L https://www.github.com/jlzsss/FileRun/archive/master.zip -o $(DL_DIR)/$(PKG_FILE); \
 	fi
 	rm -r $(PKG_BUILD_DIR)
 	mkdir -p $(PKG_BUILD_DIR)
