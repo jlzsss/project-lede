@@ -1,10 +1,10 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=FileRun
-PKG_VERSION:=2021_06_27
-PKG_RELEASE:=PHP_71-74
+PKG_VERSION:=2021_6_27
+PKG_RELEASE:=1
 
-PKG_FILE:=$(PKG_NAME)_$(PKG_VERSION)_$(PKG_RELEASE).zip
+PKG_FILE:=$(PKG_NAME)-$(PKG_VERSION).zip
 PKG_URL:=https://github.com/jlzsss/FileRun.git
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)
 PKG_HASH:=skip
@@ -32,7 +32,7 @@ endef
 
 define Build/Prepare
 	if [ ! -f $(DL_DIR)/$(PKG_FILE) ] ; then \
-		curl -L https://www.github.com/jlzsss/FileRun/archive/master.zip -o $(DL_DIR)/$(PKG_FILE); \
+		curl -L https://codeload.github.com/jlzsss/FileRun/zip/v$(PKG_VERSION) -o $(DL_DIR)/$(PKG_FILE); \
 	fi
 	rm -r $(PKG_BUILD_DIR)
 	mkdir -p $(PKG_BUILD_DIR)
