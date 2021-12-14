@@ -36,7 +36,7 @@ define Build/Prepare
 	fi
 	rm -r $(PKG_BUILD_DIR)
 	mkdir -p $(PKG_BUILD_DIR)
-	tar -zxvf $(DL_DIR)/$(PKG_FILE) -C $(PKG_BUILD_DIR)
+	tar -zxvf $(DL_DIR)/$(PKG_FILE) --strip-components=1 -C $(PKG_BUILD_DIR)
 endef
 
 define Build/Compile
