@@ -1,11 +1,17 @@
-# Introduction
+# 适用于Homelede/Openwrt的7zip命令行，兼容GCC17
+p7z 用于7z格式文件压缩及解压
+
+## Introduction
 Makefile to create package p7zip for [LEDE](https://lede-project.org)/[OpenWrt](https://openwrt.org/).
 Only `7z` is available, if you need `7za` or `7zr`, you might freedly modify the `MAKE_FLAGS` and the install section in file `Makefile`, don't foget to create`files/7za` or `files/7zr` using `files/7z` as template.
 
-# Usage
+### Eric's note @ 2022.09.11：
+Some code writing methods have been adjusted so that they can be compiled under GCC 17
+
+## Usage
 ```bash
 cd lede-sdk/
-git clone https://github.com/hubutui/p7zip-lede.git package/p7zip
+git clone https://github.com/xiaoqingfengATGH/p7zip-gcc17.git package/p7zip
 make menuconfig
 ```
 
